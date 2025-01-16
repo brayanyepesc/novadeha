@@ -18,7 +18,7 @@ export const Pagination = ({
       <button
         onClick={onPrev}
         disabled={currentPage === 1}
-        className="px-4 py-2 bg-novaviolet text-white rounded disabled:bg-gray-300"
+        className="px-4 py-2 bg-novaviolet text-white rounded disabled:bg-gray-300 dark:disabled:bg-gray-800"
         aria-label="Página anterior"
       >
         <LuArrowLeft />
@@ -29,7 +29,7 @@ export const Pagination = ({
       <button
         onClick={onNext}
         disabled={currentPage === maxPage}
-        className="px-4 py-2 bg-novaviolet text-white rounded disabled:bg-gray-300"
+        className="px-4 py-2 bg-novaviolet text-white rounded disabled:bg-gray-300 dark:disabled:bg-gray-800"
         aria-label="Página siguiente"
       >
         <LuArrowRight />

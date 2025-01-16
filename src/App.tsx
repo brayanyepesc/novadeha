@@ -31,7 +31,7 @@ function App() {
   return (
     <main
       aria-label="Contact list"
-      className="w-full max-h-screen h-screen p-5"
+      className="w-full max-h-screen h-screen p-5 dark:bg-gray-900"
     >
       <header className="flex justify-between">
         <Title text="Contact List" />

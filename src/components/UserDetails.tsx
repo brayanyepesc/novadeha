@@ -13,7 +13,7 @@ const UserDetails = ({ user }: { user: User }) => {
     });
   }, []);
   return (
-    <div className="w-full shadow-lg flex p-2 rounded-lg relative">
+    <div className="w-full shadow-lg flex p-5 gap-10 rounded-lg relative dark:bg-gray-800">
       <img src={ProfilePicture} alt="" className="rounded-full w-40 h-40" />
       <ul>
         {Object.entries(user).map(([key, value]) => (
@@ -21,7 +21,7 @@ const UserDetails = ({ user }: { user: User }) => {
             <span className="text-novaviolet font-semibold capitalize">
               {key}:
             </span>{" "}
-            {String(value)}
+            <span className="text-black dark:text-white">{String(value)}</span>
           </li>
         ))}
       </ul>
