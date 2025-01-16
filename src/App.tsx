@@ -1,7 +1,9 @@
+import { Title } from "./components/Title";
+
 function App() {
   return (
     <main className="w-full max-h-screen h-screen p-5">
-      <h1>Contact List</h1>
+      <Title text="Contact List" />
       <p>Form</p>
       <p>User List</p>
       <p>User Details</p>
