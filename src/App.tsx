@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { Searchbar } from "./components/Searchbar";
 import { Title } from "./components/Title";
 import { UsersList } from "./components/UsersList";
@@ -10,6 +10,7 @@ import UserDetails from "./components/UserDetails";
 import { usePagination } from "./hooks/usePagination";
 import { useFilterUsers } from "./hooks/useFilterUsers";
 import { Pagination } from "./components/Pagination";
+import Swal from "sweetalert2";
 
 function App() {
   const [search, setSearch] = useState<string>("");
@@ -19,6 +20,13 @@ function App() {
     users: filteredUsers,
     usersPerPage: 5,
   });
+  const createUser = useCallback(() => {
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Functionality not implemented yet!",
+    });
+  }, []);
   return (
     <main
       aria-label="Contact list"
@@ -28,7 +36,10 @@ function App() {
         <Title text="Contact List" />
         <div className="flex justify-center items-cenetr gap-2">
           <Searchbar search={search} setSearch={setSearch} />
-          <button className="p-2 rounded-full bg-novaviolet cursor-pointer text-white">
+          <button
+            onClick={createUser}
+            className="p-2 rounded-full bg-novaviolet cursor-pointer text-white"
+          >
             <LuPlus />
           </button>
         </div>

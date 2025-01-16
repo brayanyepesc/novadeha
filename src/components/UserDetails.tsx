@@ -1,9 +1,17 @@
-import { memo } from "react";
+import { memo, useCallback } from "react";
 import { User } from "../types/types";
 import ProfilePicture from "../assets/profile-picture.webp";
 import { LuTrash } from "react-icons/lu";
+import Swal from "sweetalert2";
 
 const UserDetails = ({ user }: { user: User }) => {
+  const deleteUser = useCallback(() => {
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Functionality not implemented yet!",
+    });
+  }, []);
   return (
     <div className="w-full shadow-lg flex p-2 rounded-lg relative">
       <img src={ProfilePicture} alt="" className="rounded-full w-40 h-40" />
@@ -17,7 +25,10 @@ const UserDetails = ({ user }: { user: User }) => {
           </li>
         ))}
       </ul>
-      <button className="absolute bottom-2 right-2 p-2 rounded-full bg-novaviolet cursor-pointer text-white">
+      <button
+        onClick={deleteUser}
+        className="absolute bottom-2 right-2 p-2 rounded-full bg-novaviolet cursor-pointer text-white"
+      >
         <LuTrash />
       </button>
     </div>
