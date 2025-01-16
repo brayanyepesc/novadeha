@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "name": "Brayan",
+    "email": "brayan@example.com",
+    "phone": "123-456-7890",
+    "address": "Cra 89"
+  },
+  {
+    "id": 2,
+    "name": "Pablo",
+    "email": "pablo@example.com",
+    "phone": "123-456-7890",
+    "address": "Cra 90"
+  },
+  {
+    "id": 3,
+    "name": "Teresa",
+    "email": "teresa@example.com",
+    "phone": "123-456-7890",
+    "address": "Cra 91"
+  },
+  {
+    "id": 4,
+    "name": "Adolfo",
+    "email": "adolfo@example.com",
+    "phone": "123-456-7890",
+    "address": "Cra 92"
+  },
+  {
+    "id": 5,
+    "name": "Liset",
+    "email": "liset@example.com",
+    "phone": "123-456-7890",
+    "address": "Cra 93"
+  }
+]
