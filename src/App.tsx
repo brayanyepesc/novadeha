@@ -5,6 +5,7 @@ import { UsersList } from "./components/UsersList";
 import users from "./data/data.json";
 import { User } from "./types/types";
 import ErrorMessage from "./components/ErrorMessage";
+import { LuPlus } from "react-icons/lu";
 
 function App() {
   const [search, setSearch] = useState<string>("");
@@ -19,7 +20,12 @@ function App() {
     >
       <header className="flex justify-between">
         <Title text="Contact List" />
-        <Searchbar search={search} setSearch={setSearch} />
+        <div className="flex justify-center items-cenetr gap-2">
+          <Searchbar search={search} setSearch={setSearch} />
+          <button className="p-2 rounded-full bg-novaviolet cursor-pointer text-white">
+            <LuPlus />
+          </button>
+        </div>
       </header>
       <section className="w-full h-[400px] mt-5 rounded-lg p-5">
         {filteredUsers.length > 0 ? (
@@ -28,7 +34,9 @@ function App() {
           <ErrorMessage message="Oops! We couldn’t find anything matching your search." />
         )}
       </section>
-      <footer className="bg-gray-100 rounded-lg w-full h-48">{selectedUser && <p>User Details</p>}</footer>
+      <footer className="bg-gray-100 rounded-lg w-full h-48">
+        {selectedUser && <p>User Details</p>}
+      </footer>
     </main>
   );
 }
