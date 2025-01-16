@@ -33,5 +33,40 @@
     "email": "liset@example.com",
     "phone": "123-456-7890",
     "address": "Cra 93"
+  },
+  {
+    "id": 6,
+    "name": "Juan",
+    "email": "juan@example.com",
+    "phone": "123-456-7890",
+    "address": "Cra 94"
+  },
+  {
+    "id": 7,
+    "name": "Humberto",
+    "email": "hum@example.com",
+    "phone": "123-456-7890",
+    "address": "Cra 95"
+  },
+  {
+    "id": 8,
+    "name": "Rosa",
+    "email": "rosa@example.com",
+    "phone": "123-456-7890",
+    "address": "Cra 96"
+  },
+  {
+    "id": 9,
+    "name": "Melissa",
+    "email": "meli@example.com",
+    "phone": "123-456-7890",
+    "address": "Cra 97"
+  },
+  {
+    "id": 10,
+    "name": "Andrés",
+    "email": "andres@example.com",
+    "phone": "123-456-7890",
+    "address": "Cra 98"
   }
 ]
