@@ -1,5 +1,7 @@
 import { Searchbar } from "./components/Searchbar";
 import { Title } from "./components/Title";
+import { UsersList } from "./components/UsersList";
+import users from './data/data.json'
 
 function App() {
   return (
@@ -11,8 +13,8 @@ function App() {
         <Title text="Contact List" />
         <Searchbar />
       </header>
-      <section className="w-full bg-gray-100 mt-5 rounded-lg p-5">
-        <p>User List</p>
+      <section className="w-full h-[400px] bg-gray-100 mt-5 rounded-lg p-5">
+        <UsersList users={users} />
       </section>
       <p>User Details</p>
     </main>
