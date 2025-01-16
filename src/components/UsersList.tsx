@@ -4,7 +4,7 @@ import { UserCard } from "./UserCard";
 
 export const UsersList = ({ users, onSelectUser }: { users: User[], onSelectUser: Dispatch<SetStateAction<User | null>> }) => {
   return (
-    <ul className="list-none p-0 grid grid-cols-5 gap-2">
+    <ul className="list-none p-0 grid grid-cols-5 gap-4">
       {users.map((user) => (
         <UserCard key={user.id} user={user} onSelectUser={onSelectUser} />
       ))}
