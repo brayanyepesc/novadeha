@@ -1,8 +1,8 @@
 import { LuSearch } from "react-icons/lu"
 import { User } from "../types/types"
-import { Dispatch, SetStateAction } from "react"
+import { Dispatch, memo, SetStateAction } from "react"
 
-export const UserCard = ({ user, onSelectUser }: { user: User, onSelectUser: Dispatch<SetStateAction<User | null>> }) => {
+const UserCard = ({ user, onSelectUser }: { user: User, onSelectUser: Dispatch<SetStateAction<User | null>> }) => {
   return (
     <li className="p-5 rounded-lg shadow-md">
         <div className="w-full text-center p-5 rounded-lg relative">
@@ -15,3 +15,5 @@ export const UserCard = ({ user, onSelectUser }: { user: User, onSelectUser: Dis
     </li>
   )
 }
+
+export default memo(UserCard)

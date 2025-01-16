@@ -4,7 +4,7 @@ import { Title } from "./components/Title";
 import { UsersList } from "./components/UsersList";
 import users from "./data/data.json";
 import { User } from "./types/types";
-import { ErrorMessage } from "./components/ErrorMessage";
+import ErrorMessage from "./components/ErrorMessage";
 
 function App() {
   const [search, setSearch] = useState<string>("");

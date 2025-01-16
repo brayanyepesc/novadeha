@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction } from "react";
 import { User } from "../types/types";
-import { UserCard } from "./UserCard";
+import UserCard from "./UserCard";
 
 export const UsersList = ({ users, onSelectUser }: { users: User[], onSelectUser: Dispatch<SetStateAction<User | null>> }) => {
   return (

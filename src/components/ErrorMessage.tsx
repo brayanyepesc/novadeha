@@ -1,4 +1,6 @@
-export const ErrorMessage = ({ message }: { message: string }) => {
+import { memo } from "react";
+
+const ErrorMessage = ({ message }: { message: string }) => {
   return (
     <div
       className="font-semibold text-novaviolet text-lg text-center"
@@ -9,3 +11,5 @@ export const ErrorMessage = ({ message }: { message: string }) => {
     </div>
   );
 };
+
+export default memo(ErrorMessage)
