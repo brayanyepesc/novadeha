@@ -7,13 +7,18 @@ import { User } from "./types/types";
 import ErrorMessage from "./components/ErrorMessage";
 import { LuPlus } from "react-icons/lu";
 import UserDetails from "./components/UserDetails";
+import { usePagination } from "./hooks/usePagination";
+import { useFilterUsers } from "./hooks/useFilterUsers";
+import { Pagination } from "./components/Pagination";
 
 function App() {
   const [search, setSearch] = useState<string>("");
   const [selectedUser, setSelectedUser] = useState<User | null>(null);
-  const filteredUsers: User[] = users.filter((user: User) =>
-    user.name.toLowerCase().includes(search.toLowerCase())
-  );
+  const filteredUsers = useFilterUsers(users, search);
+  const { currentUsers, currentPage, maxPage, next, prev } = usePagination({
+    users: filteredUsers,
+    usersPerPage: 5,
+  });
   return (
     <main
       aria-label="Contact list"
@@ -28,12 +33,18 @@ function App() {
           </button>
         </div>
       </header>
-      <section className="w-full h-[400px] mt-5 rounded-lg p-5">
+      <section className="w-full min-h-[400px] mt-5 rounded-lg p-5">
         {filteredUsers.length > 0 ? (
-          <UsersList users={filteredUsers} onSelectUser={setSelectedUser} />
+          <UsersList users={currentUsers} onSelectUser={setSelectedUser} />
         ) : (
           <ErrorMessage message="Oops! We couldn’t find anything matching your search." />
         )}
+        <Pagination
+          currentPage={currentPage}
+          maxPage={maxPage}
+          onNext={next}
+          onPrev={prev}
+        />
       </section>
       {selectedUser && <UserDetails user={selectedUser} />}
     </main>
