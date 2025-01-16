@@ -11,6 +11,7 @@ import { usePagination } from "./hooks/usePagination";
 import { useFilterUsers } from "./hooks/useFilterUsers";
 import { Pagination } from "./components/Pagination";
 import Swal from "sweetalert2";
+import { ThemeToggle } from "./components/ThemeToggle";
 
 function App() {
   const [search, setSearch] = useState<string>("");
@@ -35,6 +36,7 @@ function App() {
       <header className="flex justify-between">
         <Title text="Contact List" />
         <div className="flex justify-center items-cenetr gap-2">
+          <ThemeToggle />
           <Searchbar search={search} setSearch={setSearch} />
           <button
             onClick={createUser}
