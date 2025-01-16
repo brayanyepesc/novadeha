@@ -14,7 +14,7 @@ const UserDetails = ({ user }: { user: User }) => {
   }, []);
   return (
     <div className="w-full shadow-lg flex p-5 gap-10 rounded-lg relative dark:bg-gray-800">
-      <img src={ProfilePicture} alt="" className="rounded-full w-40 h-40" />
+      <img src={ProfilePicture} alt={`Profile picture of ${user.name}`}className="rounded-full w-40 h-40" />
       <ul>
         {Object.entries(user).map(([key, value]) => (
           <li key={key} className="mb-2">
@@ -28,6 +28,8 @@ const UserDetails = ({ user }: { user: User }) => {
       <button
         onClick={deleteUser}
         className="absolute bottom-2 right-2 p-2 rounded-full bg-novaviolet cursor-pointer text-white"
+        aria-label={`Delete ${user.name}'s account`}
+        title={`Delete ${user.name}'s account`}
       >
         <LuTrash />
       </button>
