@@ -13,8 +13,8 @@ const UserDetails = ({ user }: { user: User }) => {
     });
   }, []);
   return (
-    <div className="w-full shadow-lg flex p-5 gap-10 rounded-lg relative dark:bg-gray-800">
-      <img src={ProfilePicture} alt={`Profile picture of ${user.name}`}className="rounded-full w-40 h-40" />
+    <div className="w-full shadow-lg flex justify-center items-center p-2 md:p-5 gap-5 md:gap-10 rounded-lg relative dark:bg-gray-800">
+      <img src={ProfilePicture} alt={`Profile picture of ${user.name}`}className="rounded-full w-20 h-20 md:w-40 md:h-40" />
       <ul>
         {Object.entries(user).map(([key, value]) => (
           <li key={key} className="mb-2">

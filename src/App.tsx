@@ -31,9 +31,9 @@ function App() {
   return (
     <main
       aria-label="Contact list"
-      className="w-full max-h-screen h-screen p-5 dark:bg-gray-900"
+      className="w-full max-h-screen h-screen md:p-5 p-2 dark:bg-gray-900"
     >
-      <header className="flex justify-between">
+      <header className="flex flex-col md:flex-row justify-between gap-4 md:gap-0">
         <Title text="Contact List" />
         <div className="flex justify-center items-cenetr gap-2">
           <ThemeToggle />
@@ -46,7 +46,7 @@ function App() {
           </button>
         </div>
       </header>
-      <section className="w-full min-h-[400px] mt-5 rounded-lg p-5">
+      <section className="w-full min-h-[400px] mt-5 rounded-lg p-2 md:p-5">
         {filteredUsers.length > 0 ? (
           <UsersList users={currentUsers} onSelectUser={setSelectedUser} />
         ) : (
