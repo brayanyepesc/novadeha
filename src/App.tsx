@@ -6,6 +6,7 @@ import users from "./data/data.json";
 import { User } from "./types/types";
 import ErrorMessage from "./components/ErrorMessage";
 import { LuPlus } from "react-icons/lu";
+import UserDetails from "./components/UserDetails";
 
 function App() {
   const [search, setSearch] = useState<string>("");
@@ -34,9 +35,7 @@ function App() {
           <ErrorMessage message="Oops! We couldn’t find anything matching your search." />
         )}
       </section>
-      <footer className="bg-gray-100 rounded-lg w-full h-48">
-        {selectedUser && <p>User Details</p>}
-      </footer>
+      {selectedUser && <UserDetails user={selectedUser} />}
     </main>
   );
 }
