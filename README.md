@@ -1,50 +1,31 @@
-# React + TypeScript + Vite
+# Prueba Técnica: Lista Filtrable
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Descripción
 
-Currently, two official plugins are available:
+Este proyecto es una aplicación React con TypeScript que permite filtrar una lista de usuarios y mostrar detalles adicionales. Está optimizado para accesibilidad, modularidad y buenas prácticas de desarrollo.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Decisiones Técnicas
 
-## Expanding the ESLint configuration
+1. **Modularidad**: Dividí la aplicación en componentes reutilizables (`SearchBar`, `UserList`, `UserDetails`, etc.). Más adelante se puede pensar en una arquitectura como por ejemplo, atom design.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+2. **Optimización**:
+   - `useMemo` para evitar cálculos innecesarios en el filtrado.
+   - `React.memo` en componentes para prevenir re-renderizados.
+  PD: El uso de estos en realidad no es tan necesario en una app tan pequeña ya antes que sumar resta, sin embargo en algunos de los componentes se implementó.
 
-- Configure the top-level `parserOptions` property like this:
+3. **Accesibilidad**:
+   - Etiquetas semánticas (`<form>`, `<ul>`, `<li>`).
+   - `aria-live` para notificar cambios dinámicos.
+   - Navegación mediante teclado.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+4. **Estilo**: Usé **TailwindCSS** para un diseño limpio, responsivo y consistente.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Escalabilidad
+- Implementación de paginación
+- Soporte tema oscuro
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## Cómo Ejecutar
+1. Clonar el repositorio.
+2. Instalar dependencias con `npm install`.
+3. Ejecutar el proyecto con `npm run dev`.
+---
