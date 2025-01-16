@@ -11,7 +11,9 @@ function App() {
         <Title text="Contact List" />
         <Searchbar />
       </header>
-      <p>User List</p>
+      <section className="w-full bg-gray-100 mt-5 rounded-lg p-5">
+        <p>User List</p>
+      </section>
       <p>User Details</p>
     </main>
   );
